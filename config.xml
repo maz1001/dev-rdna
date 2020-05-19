@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="com.rdnastore.app" version="4.22.3">
+    <name>Rdna Store</name>
+    <description>Rdna أرضنا is a speciality grocery store &amp; a community food initiative.</description>
+    <author email="support@ordering.co" href="http://www.ordering.co/">
+        Ordering Inc
+    </author>
+    <content src="index.html"/>
+    <access origin="*"/>
+    <allow-navigation href="http://*/*"/>
+    <allow-navigation href="https://*/*"/>
+    <allow-intent href="http://*/*"/>
+    <allow-intent href="https://*/*"/>
+    <allow-intent href="tel:*"/>
+    <allow-intent href="sms:*"/>
+    <allow-intent href="mailto:*"/>
+    <allow-intent href="geo:*"/>
+    <preference name="phonegap-version" value="cli-9.0.0"/>
+    <preference name="DisallowOverscroll" value="true"/>
+    <preference name="BackupWebStorage" value="none"/>
+    <preference name="SplashScreen" value="screen"/>
+    <preference name="AutoHideSplashScreen" value="true"/>
+    <preference name="SplashScreenDelay" value="4000"/>
+    <preference name="FadeSplashScreen" value="true"/>
+    <preference name="FadeSplashScreenDuration" value="1000"/>
+    <preference name="ShowSplashScreenSpinner" value="false"/>
+    <preference name="SplashMaintainAspectRatio" value="true"/>
+    <preference name="android-minSdkVersion" value="19"/>
+    <preference name="android-targetSdkVersion" value="28"/>
+    <preference name="orientation" value="portrait"/>
+    <preference name="AllowInlineMediaPlayback" value="true"/>
+    <preference name="MediaPlaybackRequiresUserAction" value="false"/>
+    <preference name="StatusBarBackgroundColor" value="#FFFFFF"/>
+    <preference name="KeyboardResize" value="true"/>
+    <preference name="KeyboardResizeMode" value="native"/>
+    <feature name="StatusBar">
+        <param name="ios-package" onload="true" value="CDVStatusBar"/>
+    </feature>
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation"/>
+    </feature>
+    <platform name="android">
+        <allow-intent href="market:*"/>
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application android:allowBackup="false"/>
+            <application android:usesCleartextTraffic="true"/>
+            <application android:debuggable="false"/>
+        </edit-config>
+        <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png"/>
+        <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png"/>
+        <icon density="hdpi" src="resources/android/icon/drawable-hdpi-icon.png"/>
+        <icon density="xhdpi" src="resources/android/icon/drawable-xhdpi-icon.png"/>
+        <icon density="xxhdpi" src="resources/android/icon/drawable-xxhdpi-icon.png"/>
+        <icon density="xxxhdpi" src="resources/android/icon/drawable-xxxhdpi-icon.png"/>
+        <splash density="land-ldpi" src="resources/android/splash/drawable-land-ldpi-screen.png"/>
+        <splash density="land-mdpi" src="resources/android/splash/drawable-land-mdpi-screen.png"/>
+        <splash density="land-hdpi" src="resources/android/splash/drawable-land-hdpi-screen.png"/>
+        <splash density="land-xhdpi" src="resources/android/splash/drawable-land-xhdpi-screen.png"/>
+        <splash density="land-xxhdpi" src="resources/android/splash/drawable-land-xxhdpi-screen.png"/>
+        <splash density="land-xxxhdpi" src="resources/android/splash/drawable-land-xxxhdpi-screen.png"/>
+        <splash density="port-ldpi" src="resources/android/splash/drawable-port-ldpi-screen.png"/>
+        <splash density="port-mdpi" src="resources/android/splash/drawable-port-mdpi-screen.png"/>
+        <splash density="port-hdpi" src="resources/android/splash/drawable-port-hdpi-screen.png"/>
+        <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png"/>
+        <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png"/>
+        <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png"/>
+        <resource-file src="locales/android/drawable-mdpi/ic_stat_onesignal_default.png" target="app/src/main/res/drawable-mdpi/ic_stat_onesignal_default.png"/>
+        <resource-file src="locales/android/drawable-hdpi/ic_stat_onesignal_default.png" target="app/src/main/res/drawable-hdpi/ic_stat_onesignal_default.png"/>
+        <resource-file src="locales/android/drawable-xhdpi/ic_stat_onesignal_default.png" target="app/src/main/res/drawable-xhdpi/ic_stat_onesignal_default.png"/>
+        <resource-file src="locales/android/drawable-xxhdpi/ic_stat_onesignal_default.png" target="app/src/main/res/drawable-xxhdpi/ic_stat_onesignal_default.png"/>
+        <resource-file src="locales/android/drawable-xxxhdpi/ic_stat_onesignal_default.png" target="app/src/main/res/drawable-xxxhdpi/ic_stat_onesignal_default.png"/>
+        <plugin name="cordova-plugin-ionic" spec="4.1.7">
+            <param name="APP_ID" value="2c8c4592"/>
+            <param name="CHANNEL_NAME" value="Master"/>
+            <param name="UPDATE_METHOD" value="none"/>
+        </plugin>
+        <plugin name="onesignal-cordova-plugin" spec="2.5.2"/>
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*"/>
+        <allow-intent href="itms-apps:*"/>
+        <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
+            <string>Your current location will be displayed on the map and used for directions, nearby search results, and estimated travel times.</string>
+        </edit-config>
+        <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
+            <string>The app requires access to the camera for the profile picture.</string>
+        </edit-config>
+        <edit-config file="*-Info.plist" mode="merge" target="NSBluetoothAlwaysUsageDescription">
+            <string>The app requires access to the bluetooth to improve the location services.</string>
+        </edit-config>
+        <icon height="57" src="resources/ios/icon/icon.png" width="57"/>
+        <icon height="114" src="resources/ios/icon/icon@2x.png" width="114"/>
+        <icon height="40" src="resources/ios/icon/icon-40.png" width="40"/>
+        <icon height="80" src="resources/ios/icon/icon-40@2x.png" width="80"/>
+        <icon height="120" src="resources/ios/icon/icon-40@3x.png" width="120"/>
+        <icon height="50" src="resources/ios/icon/icon-50.png" width="50"/>
+        <icon height="100" src="resources/ios/icon/icon-50@2x.png" width="100"/>
+        <icon height="60" src="resources/ios/icon/icon-60.png" width="60"/>
+        <icon height="120" src="resources/ios/icon/icon-60@2x.png" width="120"/>
+        <icon height="180" src="resources/ios/icon/icon-60@3x.png" width="180"/>
+        <icon height="72" src="resources/ios/icon/icon-72.png" width="72"/>
+        <icon height="144" src="resources/ios/icon/icon-72@2x.png" width="144"/>
+        <icon height="76" src="resources/ios/icon/icon-76.png" width="76"/>
+        <icon height="152" src="resources/ios/icon/icon-76@2x.png" width="152"/>
+        <icon height="167" src="resources/ios/icon/icon-83.5@2x.png" width="167"/>
+        <icon height="29" src="resources/ios/icon/icon-small.png" width="29"/>
+        <icon height="58" src="resources/ios/icon/icon-small@2x.png" width="58"/>
+        <icon height="87" src="resources/ios/icon/icon-small@3x.png" width="87"/>
+        <icon height="1024" src="resources/ios/icon/icon-1024.png" width="1024"/>
+        <splash height="1136" src="resources/ios/splash/Default-568h@2x~iphone.png" width="640"/>
+        <splash height="1334" src="resources/ios/splash/Default-667h.png" width="750"/>
+        <splash height="2208" src="resources/ios/splash/Default-736h.png" width="1242"/>
+        <splash height="1242" src="resources/ios/splash/Default-Landscape-736h.png" width="2208"/>
+        <splash height="1536" src="resources/ios/splash/Default-Landscape@2x~ipad.png" width="2048"/>
+        <splash height="2048" src="resources/ios/splash/Default-Landscape@~ipadpro.png" width="2732"/>
+        <splash height="768" src="resources/ios/splash/Default-Landscape~ipad.png" width="1024"/>
+        <splash height="2048" src="resources/ios/splash/Default-Portrait@2x~ipad.png" width="1536"/>
+        <splash height="2732" src="resources/ios/splash/Default-Portrait@~ipadpro.png" width="2048"/>
+        <splash height="1024" src="resources/ios/splash/Default-Portrait~ipad.png" width="768"/>
+        <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640"/>
+        <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320"/>
+        <splash height="2732" src="resources/ios/splash/Default@2x~universal~anyany.png" width="2732"/>
+        <plugin name="cordova-plugin-ionic" spec="4.1.7">
+            <param name="APP_ID" value="2c8c4592"/>
+            <param name="CHANNEL_NAME" value="Master"/>
+            <param name="UPDATE_METHOD" value="none"/>
+        </plugin>
+        <plugin name="onesignal-cordova-plugin" spec="2.2.5"/>
+    </platform>
+    <access origin="cdvfile://*"/>
+    <allow-intent href="cdvfile://*"/>
+    <allow-navigation href="*://*youtube.com"/>
+    <plugin name="cordova-plugin-device" spec="^2.0.3"/>
+    <plugin name="cordova-plugin-geolocation" spec="^4.0.2">
+        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="Your current location will be displayed on the map and used for directions, nearby search results, and estimated travel times."/>
+    </plugin>
+    <plugin name="cordova-plugin-inappbrowser" spec="^3.1.0"/>
+    <plugin name="cordova-plugin-network-information" spec="^2.0.2"/>
+    <plugin name="cordova-plugin-request-location-accuracy" spec="^2.3.0"/>
+    <plugin name="cordova-plugin-splashscreen" spec="^5.0.3"/>
+    <plugin name="cordova-plugin-statusbar" spec="^2.4.3"/>
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.4"/>
+    <plugin name="cordova-plugin-x-socialsharing" spec="^5.6.0"/>
+    <plugin name="cordova.plugins.diagnostic" spec="^5.0.1">
+        <variable name="ANDROID_SUPPORT_VERSION" value="26.+"/>
+    </plugin>
+    <plugin name="cordova-plugin-ionic-webview" spec="^4.0.0"/>
+    <plugin name="cordova-plugin-camera" spec="^4.1.0">
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="This app requires access to the photo library to upload profile image."/>
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="This app requires access to the photo library to upload profile image."/>
+    </plugin>
+    <plugin name="cordova-plugin-ionic-keyboard" spec="^2.2.0"/>
+    <plugin name="cordova-plugin-facebook4" spec="^5.0.0">
+        <variable name="APP_ID" value="230175411585339"/>
+        <variable name="APP_NAME" value="Rdnastore"/>
+    </plugin>
+    <plugin name="uk.co.workingedge.phonegap.plugin.launchnavigator" spec="^5.0.4">
+        <variable name="GOOGLE_API_KEY_FOR_ANDROID" value=""/>
+    </plugin>
+</widget>
